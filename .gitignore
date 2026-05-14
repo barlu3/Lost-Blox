@@ -1,0 +1,9 @@
+# Project place file
+Lost-Blox.rbxl
+
+# Roblox Studio lock files
+/*.rbxlx.lock
+/*.rbxl.lock
+
+sourcemap.json
+CLAUDE.local.md
