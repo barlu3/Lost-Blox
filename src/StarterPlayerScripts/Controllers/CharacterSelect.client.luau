@@ -666,7 +666,7 @@ end)
 -- ── Server → Client: slot accepted, dismiss menu and enter the game ───────────
 charReadyEv.OnClientEvent:Connect(function()
 	playPending = false
-	gui.Visible = false
+	gui.Enabled = false
 end)
 
 -- ════════════════════════════════════════════════════════════════════════════

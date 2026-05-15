@@ -3,6 +3,9 @@
 local Players = game:GetService("Players")
 local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
+-- Must be false before any PlayerAdded fires so LoadCharacterAsync works.
+Players.CharacterAutoLoads = false
+
 local ProfileManager = require(script.Parent.ProfileManager)
 
 local Remotes = ReplicatedStorage:WaitForChild("Remotes")

@@ -11,10 +11,13 @@
       "$path": "src/ReplicatedStorage"
     },
 
-    "StarterPlayer": {
+    "Players": {
       "$properties": {
         "CharacterAutoLoads": false
-      },
+      }
+    },
+
+    "StarterPlayer": {
       "StarterPlayerScripts": {
         "$path": "src/StarterPlayerScripts"
       }
