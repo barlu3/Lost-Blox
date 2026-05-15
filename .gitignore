@@ -1,9 +1,17 @@
-# Project place file
-Lost-Blox.rbxl
+# Roblox place and experience files (binary, not source-controlled)
+*.rbxl
+*.rbxlx
 
 # Roblox Studio lock files
-/*.rbxlx.lock
-/*.rbxl.lock
+*.rbxlx.lock
+*.rbxl.lock
 
+# Rojo auto-generated sourcemap (regenerated on rojo serve/build)
 sourcemap.json
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Personal/private config
 CLAUDE.local.md
