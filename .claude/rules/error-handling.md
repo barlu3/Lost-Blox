@@ -1,18 +1,16 @@
 ---
 paths:
-  - "src/api/**"
-  - "src/services/**"
-  - "**/controllers/**"
-  - "**/routes/**"
-  - "**/handlers/**"
+  - "src/server/**"
+  - "src/shared/**"
 ---
 
-# Error Handling
+# Anti-Cheat & Player Validation
 
-- Use typed or custom error classes with error codes, not generic `Error("something went wrong")`.
-- Never swallow errors silently. Log or rethrow with added context about what operation failed.
-- Handle every rejected promise. No floating (unhandled) async calls.
-- HTTP error responses: consistent shape (`{ error: { code, message } }`), correct status codes (400 validation, 401 auth, 404 not found, 500 unexpected).
-- Never expose stack traces, internal paths, or raw database errors in production responses.
-- Retry transient errors (network timeouts, rate limits) with exponential backoff. Fail fast on validation and auth errors. Don't retry them.
-- Include correlation or request IDs in error logs when available.
+- All game-state mutations must originate on the server. The client proposes; the server decides.
+- Validate every RemoteEvent/RemoteFunction argument: type, range, and plausibility. Reject out-of-range or unexpected types immediately.
+- Never trust client-reported position, velocity, health, or currency values. Compute or verify these server-side.
+- Sanity-check movement speed and teleport distances. Flag or kick players whose deltas exceed physics limits.
+- Use a server-side debounce per player per action to prevent rapid-fire RemoteEvent spam.
+- Log suspicious patterns (impossible values, repeated edge-case inputs) with the player's UserId for later review. Never log PII beyond UserId.
+- Never store authoritative game state in LocalScripts or ReplicatedStorage values the client can write.
+- Wrap DataStore calls in `pcall`. On failure, retry with backoff; never silently drop the save.

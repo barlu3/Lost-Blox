@@ -1,19 +1,13 @@
 ---
 paths:
-  - "src/api/**"
-  - "src/auth/**"
-  - "src/middleware/**"
-  - "**/routes/**"
-  - "**/controllers/**"
+  - "src/server/**"
 ---
 
 # Security
 
-- Validate all user input at the system boundary. Never trust request parameters.
-- Use parameterized queries. Never concatenate user input into SQL or shell commands.
-- Sanitize output to prevent XSS. Use framework-provided escaping.
-- Authentication tokens must be short-lived. Store refresh tokens server-side only.
-- Never log secrets, tokens, passwords, or PII.
-- Use constant-time comparison for secrets and tokens.
-- Set appropriate CORS, CSP, and security headers.
-- Rate-limit authentication endpoints.
+- Always validate RemoteEvent/RemoteFunction arguments server-side — clients can fire with arbitrary values.
+- Never trust client-provided player identity. Use `game:GetService("Players"):GetPlayerFromCharacter()` to resolve the player from the server.
+- Never store sensitive data in ReplicatedStorage or any client-accessible instance tree.
+- DataStore keys must be scoped per-player. Never allow one player's key to be derived from another's data.
+- Never log or print player PII (UserId, username, IP) in production output.
+- Rate-limit repeated RemoteEvent calls server-side to prevent abuse.

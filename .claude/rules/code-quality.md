@@ -15,10 +15,10 @@ alwaysApply: true
 
 ## Naming
 
-- Files: PascalCase for components and classes (`UserProfile.tsx`), kebab-case for utilities and directories (`date-utils.ts`).
-- Booleans: `is` / `has` / `should` / `can` prefix. Functions: verb-first (`getUser`). Handlers: `handle*` internal, `on*` as props.
-- Factories: `create*`. Converters: `to*`. Predicates: `is*` / `has*`. Constants: `SCREAMING_SNAKE`.
-- Abbreviations only when universally known (`id`, `url`, `api`, `db`, `auth`). Acronyms as words: `userId`, not `userID`.
+- Files: PascalCase for all modules (`PlayerData.luau`, `UIManager.luau`).
+- Variables/functions: camelCase. Services/classes: PascalCase.
+- Booleans: `is` / `has` / `should` / `can` prefix. Functions: verb-first (`getPlayer`). Constants: `SCREAMING_SNAKE`.
+- Abbreviations only when universally known (`id`, `userId`). Acronyms as words: `userId`, not `userID`.
 
 ## Code Markers
 
@@ -26,6 +26,6 @@ alwaysApply: true
 
 ## File Organization
 
-- Imports: builtins, external, internal, relative, types. Blank line between groups.
-- Exports: named over default. One component or class per file.
-- Function order: public API first, then helpers in call order.
+- `require()` calls at the top of each module.
+- Modules return a table (for a class/service) or a single function (for utilities).
+- Public API first, then helpers in call order.
