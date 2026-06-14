@@ -1,0 +1,8 @@
+{
+  "id": "chaos_t0",
+  "entries": [
+    { "id": "common_necklace", "weight": 20, "min_ilvl": 0 },
+    { "id": "ability_stone_t0", "weight": 20, "min_ilvl": 0 },
+    { "id": "honing_shard_t0", "weight": 60, "min_ilvl": 0 }
+  ]
+}

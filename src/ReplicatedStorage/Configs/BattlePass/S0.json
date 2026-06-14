@@ -1,0 +1,18 @@
+{
+  "season": "S0",
+  "season_end": 1761955200,
+  "xp_sources": {
+    "guardian_raid_kill": 1000,
+    "daily_quest": 200,
+    "chaos_dungeon_clear": 300,
+    "legion_gate_clear": 2500
+  },
+  "thresholds": [500, 1200, 2100, 3200, 5000, 7200, 9600, 12200, 15000, 18000],
+  "rewards": {
+    "1": [{ "track": "free", "type": "item", "id": "honing_shard_t1", "quantity": 50 }],
+    "2": [{ "track": "premium", "type": "item", "id": "skin_ember_set", "quantity": 1 }],
+    "3": [{ "track": "free", "type": "exp", "amount": 1000 }],
+    "4": [{ "track": "premium", "type": "item", "id": "mount_storm_drake", "quantity": 1 }],
+    "5": [{ "track": "free", "type": "item", "id": "ability_stone_t1", "quantity": 1 }]
+  }
+}

@@ -15,3 +15,11 @@ Thumbs.db
 
 # Personal/private config
 CLAUDE.local.md
+
+# Secrets — never commit
+.env
+bot/.env
+
+# Python tooling
+__pycache__/
+*.pyc

@@ -1,0 +1,93 @@
+{
+  "id": "ironclad",
+  "display_name": "Ironclad",
+  "resource_type": "fury",
+  "resource_max": 100,
+  "identity": {
+    "skill_id": "shield_charge",
+    "resource_threshold": 100
+  },
+  "skills": [
+    {
+      "id": "heavy_strike",
+      "key": "Q",
+      "cooldown": 4.0,
+      "range": 8,
+      "damage_multiplier": 1.8,
+      "resource_cost": 0,
+      "target_type": "single",
+      "tripod": {
+        "options": [
+          { "id": "crushing_blow", "type": "damage", "value": 0.20 },
+          { "id": "wide_arc", "type": "aoe_radius", "value": 0.30 },
+          { "id": "rapid_recovery", "type": "cooldown", "value": -0.15 }
+        ]
+      }
+    },
+    {
+      "id": "shield_bash",
+      "key": "W",
+      "cooldown": 6.0,
+      "range": 6,
+      "damage_multiplier": 1.4,
+      "resource_cost": 0,
+      "target_type": "single"
+    },
+    {
+      "id": "ground_slam",
+      "key": "E",
+      "cooldown": 9.0,
+      "range": 12,
+      "damage_multiplier": 2.2,
+      "resource_cost": 0,
+      "target_type": "aoe",
+      "aoe_radius": 10
+    },
+    {
+      "id": "shield_charge",
+      "key": "R",
+      "cooldown": 18.0,
+      "range": 25,
+      "damage_multiplier": 3.5,
+      "resource_cost": 100,
+      "target_type": "single"
+    },
+    {
+      "id": "guard",
+      "key": "A",
+      "cooldown": 12.0,
+      "range": 0,
+      "damage_multiplier": 0.0,
+      "resource_cost": 0,
+      "target_type": "self"
+    },
+    {
+      "id": "taunt",
+      "key": "S",
+      "cooldown": 10.0,
+      "range": 20,
+      "damage_multiplier": 0.5,
+      "resource_cost": 0,
+      "target_type": "aoe",
+      "aoe_radius": 15
+    },
+    {
+      "id": "charge_dash",
+      "key": "D",
+      "cooldown": 8.0,
+      "range": 18,
+      "damage_multiplier": 1.2,
+      "resource_cost": 0,
+      "target_type": "single"
+    },
+    {
+      "id": "war_cry",
+      "key": "F",
+      "cooldown": 30.0,
+      "range": 0,
+      "damage_multiplier": 0.0,
+      "resource_cost": 0,
+      "target_type": "self"
+    }
+  ]
+}

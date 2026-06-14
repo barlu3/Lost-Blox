@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main, "hotfix/*"]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Rojo
+        uses: ok-nick/setup-aftman@v0.4.2
+
+      - name: Install lune
+        run: |
+          curl -sSL -o lune.zip https://github.com/lune-org/lune/releases/download/v0.8.9/lune-0.8.9-linux-x86_64.zip
+          python3 -c "import zipfile; zipfile.ZipFile('lune.zip').extractall('.')"
+          chmod +x lune
+          echo "$PWD" >> "$GITHUB_PATH"
+
+      - name: Luau syntax check
+        run: lune run tools/dev/syntax_check.luau
+
+      - name: Luau unit tests
+        run: lune run tests/run.luau
+
+      - name: Python tool tests
+        run: |
+          python3 -m unittest discover -s tools/class_builder -p "test_*.py"
+          python3 -m unittest discover -s tools/mechanic_authoring -p "test_*.py"
+
+      - name: Rojo build smoke test
+        run: rojo build default.project.json -o build.rbxl
+
+      - name: Guard against committed secrets
+        run: |
+          if grep -rIn "ROBLOSECURITY" --exclude-dir=.git --exclude="*.yml" .; then
+            echo "ROBLOSECURITY must never appear in a tracked file" >&2
+            exit 1
+          fi

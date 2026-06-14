@@ -1,0 +1,14 @@
+{
+  "id": "abyss_d1",
+  "rooms": [
+    {
+      "id": "room_1",
+      "boss_id": "dungeon_warden",
+      "mechanics": [
+        { "type": "ColorMatch", "trigger_hp": 0.80, "detonation_time": 6 },
+        { "type": "DPSCheck", "trigger_hp": 0.50, "threshold": 0.35, "time_limit": 30 },
+        { "type": "PillarPhase", "trigger_hp": 0.20, "pillar_count": 4, "time_limit": 45 }
+      ]
+    }
+  ]
+}

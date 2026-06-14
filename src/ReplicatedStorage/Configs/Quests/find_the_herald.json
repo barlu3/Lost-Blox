@@ -1,0 +1,12 @@
+{
+  "id": "find_the_herald",
+  "name": "Find the Herald",
+  "objectives": [
+    { "id": "kill_scouts", "type": "kill", "target": "void_scout", "count": 5 },
+    { "id": "reach_waypoint", "type": "reach", "target": "herald_shrine_zone" }
+  ],
+  "rewards": [
+    { "type": "item", "id": "iron_sword", "quantity": 1 },
+    { "type": "exp", "amount": 500 }
+  ]
+}

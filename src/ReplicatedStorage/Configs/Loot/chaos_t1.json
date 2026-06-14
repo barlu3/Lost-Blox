@@ -1,0 +1,9 @@
+{
+  "id": "chaos_t1",
+  "entries": [
+    { "id": "void_necklace", "weight": 10, "min_ilvl": 600 },
+    { "id": "storm_earring", "weight": 15, "min_ilvl": 600 },
+    { "id": "shadow_ring", "weight": 20, "min_ilvl": 600 },
+    { "id": "honing_shard_t1", "weight": 55, "min_ilvl": 0 }
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "tier": 0,
+  "ilvl_min": 0,
+  "ilvl_max": 299,
+  "mob_count": 30,
+  "elite_hp_multiplier": 2.5,
+  "time_limit_seconds": 600,
+  "loot_table_id": "chaos_t0"
+}

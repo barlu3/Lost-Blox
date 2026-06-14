@@ -1,0 +1,20 @@
+{
+  "id": "stormcaller",
+  "display_name": "Stormcaller",
+  "resource_type": "arcana",
+  "resource_max": 100,
+  "identity": {
+    "skill_id": "arcane_surge",
+    "resource_threshold": 100
+  },
+  "skills": [
+    { "id": "arcane_bolt", "key": "Q", "cooldown": 1.5, "range": 30, "damage_multiplier": 0.8, "resource_cost": 0, "target_type": "single" },
+    { "id": "frost_nova", "key": "W", "cooldown": 4.0, "range": 15, "damage_multiplier": 1.0, "resource_cost": 0, "target_type": "aoe", "aoe_radius": 12 },
+    { "id": "ice_lance", "key": "E", "cooldown": 6.0, "range": 28, "damage_multiplier": 2.4, "resource_cost": 20, "target_type": "single" },
+    { "id": "blizzard", "key": "R", "cooldown": 12.0, "range": 25, "damage_multiplier": 3.0, "resource_cost": 40, "target_type": "aoe", "aoe_radius": 18 },
+    { "id": "blink", "key": "A", "cooldown": 8.0, "range": 20, "damage_multiplier": 0.0, "resource_cost": 0, "target_type": "self" },
+    { "id": "mana_shield", "key": "S", "cooldown": 15.0, "range": 0, "damage_multiplier": 0.0, "resource_cost": 0, "target_type": "self" },
+    { "id": "arcane_surge", "key": "D", "cooldown": 30.0, "range": 0, "damage_multiplier": 0.0, "resource_cost": 100, "target_type": "self" },
+    { "id": "meteor", "key": "F", "cooldown": 20.0, "range": 30, "damage_multiplier": 4.0, "resource_cost": 40, "target_type": "aoe", "aoe_radius": 16 }
+  ]
+}

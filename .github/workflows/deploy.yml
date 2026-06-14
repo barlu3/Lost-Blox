@@ -1,0 +1,44 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main, "hotfix/*"]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Rojo
+        uses: ok-nick/setup-aftman@v0.4.2
+
+      - name: Install lune
+        run: |
+          curl -sSL -o lune.zip https://github.com/lune-org/lune/releases/download/v0.8.9/lune-0.8.9-linux-x86_64.zip
+          python3 -c "import zipfile; zipfile.ZipFile('lune.zip').extractall('.')"
+          chmod +x lune
+          echo "$PWD" >> "$GITHUB_PATH"
+
+      - name: Run tests
+        run: |
+          lune run tools/dev/syntax_check.luau
+          lune run tests/run.luau
+          python3 -m unittest discover -s tools/class_builder -p "test_*.py"
+          python3 -m unittest discover -s tools/mechanic_authoring -p "test_*.py"
+
+      - name: Build place file
+        run: rojo build default.project.json -o build.rbxl
+
+      - name: Publish to Roblox
+        env:
+          ROBLOSECURITY: ${{ secrets.ROBLOSECURITY }}
+          PLACE_ID: ${{ secrets.PLACE_ID }}
+        run: rojo upload default.project.json --cookie "$ROBLOSECURITY" --asset_id "$PLACE_ID"

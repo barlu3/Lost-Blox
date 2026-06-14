@@ -1,0 +1,20 @@
+{
+  "id": "skystrike",
+  "display_name": "Skystrike",
+  "resource_type": "chi",
+  "resource_max": 3,
+  "identity": {
+    "skill_id": "tigers_wrath",
+    "resource_threshold": 3
+  },
+  "skills": [
+    { "id": "jab", "key": "Q", "cooldown": 1.0, "range": 6, "damage_multiplier": 0.6, "resource_cost": 0, "target_type": "single" },
+    { "id": "roundhouse", "key": "W", "cooldown": 3.0, "range": 8, "damage_multiplier": 1.0, "resource_cost": 0, "target_type": "aoe", "aoe_radius": 8 },
+    { "id": "flying_kick", "key": "E", "cooldown": 5.0, "range": 14, "damage_multiplier": 1.8, "resource_cost": 0, "target_type": "single" },
+    { "id": "palm_strike", "key": "R", "cooldown": 7.0, "range": 6, "damage_multiplier": 2.0, "resource_cost": 0, "target_type": "single" },
+    { "id": "wind_dash", "key": "A", "cooldown": 6.0, "range": 16, "damage_multiplier": 0.5, "resource_cost": 0, "target_type": "single" },
+    { "id": "meditate", "key": "S", "cooldown": 12.0, "range": 0, "damage_multiplier": 0.0, "resource_cost": 0, "target_type": "self" },
+    { "id": "tigers_wrath", "key": "D", "cooldown": 25.0, "range": 8, "damage_multiplier": 4.5, "resource_cost": 0, "target_type": "single" },
+    { "id": "whirlwind", "key": "F", "cooldown": 14.0, "range": 10, "damage_multiplier": 2.5, "resource_cost": 0, "target_type": "aoe", "aoe_radius": 10 }
+  ]
+}
